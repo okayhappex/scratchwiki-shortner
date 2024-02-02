@@ -1,0 +1,24 @@
+<!--  -->
+<!DOCTYPE HTML>
+<html lang="fr">
+    <head>
+        <title>Scratch Wiki Shortner</title>
+        <meta charset="utf-8" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-purple-500 text-sm font-medium">
+        <form class="bg-white text-cyan-950 rounded-2xl w-72 p-6 mx-auto mt-16 space-y-4" action="http://localhost:5000/new">
+            <h1 class="text-purple-500 text-2xl text-center font-bold">Nouveau lien</h1>
+            <div class="space-y-1">
+                <label for="id">Nom court:</label>
+                <input name="id" type="text" placeholder="gest-clr" class="bg-slate-100 rounded-md w-full px-4 py-2">
+            </div>
+            <div class="space-y-1">
+                <label for="link">Article original:</label>
+                <input name="link" type="text" placeholder="Gestion_des_couleurs_sur_Scratch" class="bg-slate-100 rounded-md w-full px-4 py-2">
+            </div>
+            <button type="submit" class="block bg-purple-500 text-white rounded-full mx-auto px-7 py-2">Créer</button>
+        </form>
+    </body>
+</html>
