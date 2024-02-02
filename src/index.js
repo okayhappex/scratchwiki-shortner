@@ -19,12 +19,12 @@ app.get('/new', async (req, res) => {
     let article = await links.get(req.query.id);
 
     if (article) {
-        res.status(409).json(article);
+        res.status(409).redirect(`https://fr.scratch-wiki.info/wiki/${req.query.link}`).json(article);
     } else if (req.query.link) {
         await links.put(data = { "link": req.query.link }, key = req.query.id);
-        res.status(200).json("Success");
+        res.status(200).redirect(`https://fr.scratch-wiki.info/wiki/${req.query.link}`);
     } else {
-        res.status(400).json("Bad Request");
+        res.status(400).send("Bad Request");
     }
 }); // Libre pour l'instant, peut-être réservée aux personnes détenant un compte Scratch dans le futur
 
@@ -34,7 +34,7 @@ app.get('/:id', async (req, res) => {
     if (article) {
         res.redirect(`https://fr.scratch-wiki.info/wiki/${article.link}`);
     } else {
-        res.status(404).json("Not Found");
+        res.status(404).send("Not Found");
     }
 });
 
